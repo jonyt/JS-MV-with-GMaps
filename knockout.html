@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Google Maps with Javascript MVC Libraries - a Comparison</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="index.html">Google Maps with Javascript MVC Libraries - a Comparison</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li><a href="index.html">Introduction</a></li>                          
+              <li class="nav-header">Libraries</li>
+              <li><a href="backbone.html">Backbone.js</a></li>
+              <li class="active"><a href="knockout.html">Knockout.js</a></li>
+              <li><a href="ember.html">Ember.js</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">          
+          <div class="row-fluid">
+            <div class="span4">
+              <h2>Knockout.js</h2>
+              
+             	<form class="form-search">
+		            <input type="text" id="place" class="input-medium search-query" data-bind="value: keyword" />
+		            <input type="submit" id="get-places" class="btn btn-primary" data-bind="click: go" value="Search" />
+	            </form>	
+	            <div id="map"></div>
+				
+            </div><!--/span-->    
+            <div class="span4">
+                <h2>&nbsp;</h2>                
+                <ol id="places" data-bind="template: 'business-template'"></ol>
+            </div>        
+          </div><!--/row-->
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <footer>
+        <p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/"></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+    <script type="text/x-jquery-tmpl" id="business-template">
+		{{each businesses}}
+			<li><b>Name</b>: ${name}, <b>Rating:</b>: ${rating}, <b>Near</b>: ${vicinity}<img class="place-image" src="${icon}" /></li>
+		{{/each}}
+	</script>    
+    
+	<script type='text/javascript' src='js/lib/jquery-min.1.5.1.js'></script>
+	<script type='text/javascript' src='js/lib/jquery.tmpl.js'></script>
+	<script type='text/javascript' src='js/lib/knockout-2.1.0.min.js'></script>    
+  	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+	<script type='text/javascript' src="js/knockout/app.js"></script>
+	
+  </body>
+</html>
