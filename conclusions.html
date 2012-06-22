@@ -11,6 +11,15 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <style type="text/css">
+      #comment {
+          font-size: 12px; 
+      }
+      
+      .blurb {
+        height: 95px;
+      }
+    </style>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -53,40 +62,21 @@
         <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
-              <li><a href="index.html">Introduction</a></li>              
-              <li><a href="conclusions.html">Conclusions</a></li>
+              <li><a href="backbone.html">Introduction</a></li>  
+              <li class="active"><a href="conclusions.html">Conclusions</a></li>                
               <li class="nav-header">Libraries</li>
               <li><a href="backbone.html">Backbone.js</a></li>
               <li><a href="knockout.html">Knockout.js</a></li>
-              <li class="active"><a href="ember.html">Ember.js</a></li>
+              <li><a href="ember.html">Ember.js</a></li>
             </ul>
-          </div>
+          </div><!--/.well -->
         </div><!--/span-->
-        <div class="span9">          
+        <div class="span9">         
           <div class="row-fluid">
-            <div class="span4">
-              <h2>Ember.js</h2>              
-              <script type="text/x-handlebars">
-                <form class="form-search" onsubmit="return false;">
-			        {{view Places.SearchView target="Places.searchController" action="search" class="input-medium search-query"}}
-			        {{#view Ember.Button target="Places.searchController" action="search" class="btn btn-primary"}}
-				        Search
-			        {{/view}}	
-			    </form>
-			    {{#view Places.MapView id="map"}}
-			    {{/view}}                
-		     </script>            				
-            </div>      
-            <div class="span4">
-                <h2>&nbsp;</h2>	
-                <script type="text/x-handlebars">                
-		            <ol id="places">		
-			            {{#collection contentBinding="Places.placeListController"}}
-				            <li><b>Name</b>:{{content.name}}, <b>Rating</b>: {{content.rating}}, <b>Near</b>: {{content.vicinity}} <img class="place-image" {{bindAttr src="content.icon"}} /></li> 
-			            {{/collection}}
-		            </ol>
-		        </script>
-		    </div>
+            <h2>Conclusions</h2>
+            <p>In general I found <a href="http://backbonejs.org/">Backbone.js</a> to be the easiest to work with, followed by <a href="http://knockoutjs.com/">Knockout.js</a>. But, <a href="http://backbonejs.org/">Backbone.js</a> is also the least powerful of the libraries. Both <a href="http://knockoutjs.com/">Knockout.js</a> and <a href="http://emberjs.com/">Ember.js</a> provide more features. There's an obvious tradeoff between having more features and a steeper learning curve.</p>
+            <p><a href="http://knockoutjs.com/">Knockout.js</a> required the least amount of code to get this use case up and running but this might be just because it's uniquely suited to this task. It also has the best tutorial system.</p>
+            <p>The toughest for me was <a href="http://emberjs.com/">Ember.js</a>. Like <a href="http://msdn.microsoft.com/en-us/library/ms754130.aspx">WPF</a>, it seems like a very powerful framework that would be very useful if one found the time to master all its intricacies but I'd almost say it was too difficult to use. It felt too abstracted and sophisticated. Then again, this might be unfair since I didn't spend too long on learning these libraries.</p>
           </div><!--/row-->
         </div><!--/span-->
       </div><!--/row-->
@@ -97,8 +87,17 @@
 
     </div><!--/.fluid-container-->
     <script type="text/javascript" src="js/lib/jquery-min.1.5.1.js"></script>
-	<script type="text/javascript" src="js/lib/ember-0.9.5.min.js"></script>		
-	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>		
-	<script type="text/javascript" src="js/ember/app.js"></script>
+	<script type="text/javascript" src="js/lib/underscore-min.1.1.4.js"></script>
+	<script type="text/javascript" src="js/lib/backbone-min.0.3.3.js"></script>
+	
+	<script type="text/javascript" src="js/backbone/place.js"></script>
+	<script type="text/javascript" src="js/backbone/places.js"></script>		
+	<script type="text/javascript" src="js/backbone/view.js"></script>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var appview = new AppView;
+		});
+	</script>
   </body>
 </html>
