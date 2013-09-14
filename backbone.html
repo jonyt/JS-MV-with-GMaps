@@ -54,15 +54,15 @@
               <h2>Backbone.js</h2>
               
               <form id="search-form" class="form-search" onsubmit="return false">
-			    <input type="text" id="place" class="input-medium search-query" value="restaurants" />
-			    <input type="submit" class="btn btn-primary" id="get-places" value="Search" />
-              </form>	
-		      <div id="map"></div>
-				
+                <input type="text" id="place" class="input-medium search-query" value="restaurants" />
+                <input type="submit" class="btn btn-primary" id="get-places" value="Search" />
+              </form>    
+              <div id="map"></div>
+                
             </div><!--/span-->    
             <div class="span4">
                 <h2>&nbsp;</h2>
- 		        <ol id="places"></ol>
+                 <ol id="places"></ol>
             </div>        
           </div><!--/row-->
         </div><!--/span-->
@@ -74,17 +74,17 @@
 
     </div><!--/.fluid-container-->
     <script type="text/javascript" src="js/lib/jquery-min.1.5.1.js"></script>
-	<script type="text/javascript" src="js/lib/underscore-min.1.1.4.js"></script>
-	<script type="text/javascript" src="js/lib/backbone-min.0.3.3.js"></script>
-	
-	<script type="text/javascript" src="js/backbone/place.js"></script>
-	<script type="text/javascript" src="js/backbone/places.js"></script>		
-	<script type="text/javascript" src="js/backbone/view.js"></script>
-	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			var appview = new AppView;
-		});
-	</script>
+    <script type="text/javascript" src="js/lib/underscore-min.1.1.4.js"></script>
+    <script type="text/javascript" src="js/lib/backbone-min.0.3.3.js"></script>
+    
+    <script type="text/javascript" src="js/backbone/place.js"></script>
+    <script type="text/javascript" src="js/backbone/places.js"></script>        
+    <script type="text/javascript" src="js/backbone/view.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var appview = new AppView;
+        });
+    </script>
   </body>
 </html>

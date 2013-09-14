@@ -53,12 +53,12 @@
             <div class="span4">
               <h2>Knockout.js</h2>
               
-             	<form class="form-search">
-		            <input type="text" id="place" class="input-medium search-query" data-bind="value: keyword" />
-		            <input type="submit" id="get-places" class="btn btn-primary" data-bind="click: go" value="Search" />
-	            </form>	
-	            <div id="map"></div>
-				
+                 <form class="form-search">
+                    <input type="text" id="place" class="input-medium search-query" data-bind="value: keyword" />
+                    <input type="submit" id="get-places" class="btn btn-primary" data-bind="click: go" value="Search" />
+                </form>    
+                <div id="map"></div>
+                
             </div><!--/span-->    
             <div class="span4">
                 <h2>&nbsp;</h2>                
@@ -74,16 +74,16 @@
 
     </div><!--/.fluid-container-->
     <script type="text/x-jquery-tmpl" id="business-template">
-		{{each businesses}}
-			<li><b>Name</b>: ${name}, <b>Rating:</b>: ${rating}, <b>Near</b>: ${vicinity}<img class="place-image" src="${icon}" /></li>
-		{{/each}}
-	</script>    
+        {{each businesses}}
+            <li><b>Name</b>: ${name}, <b>Rating:</b>: ${rating}, <b>Near</b>: ${vicinity}<img class="place-image" src="${icon}" /></li>
+        {{/each}}
+    </script>    
     
-	<script type='text/javascript' src='js/lib/jquery-min.1.5.1.js'></script>
-	<script type='text/javascript' src='js/lib/jquery.tmpl.js'></script>
-	<script type='text/javascript' src='js/lib/knockout-2.1.0.min.js'></script>    
-  	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
-	<script type='text/javascript' src="js/knockout/app.js"></script>
-	
+    <script type='text/javascript' src='js/lib/jquery-min.1.5.1.js'></script>
+    <script type='text/javascript' src='js/lib/jquery.tmpl.js'></script>
+    <script type='text/javascript' src='js/lib/knockout-2.1.0.min.js'></script>    
+      <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+    <script type='text/javascript' src="js/knockout/app.js"></script>
+    
   </body>
 </html>
