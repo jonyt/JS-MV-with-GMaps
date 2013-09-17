@@ -40,7 +40,7 @@
         <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
-              <li><a href="index.html">Introduction</a></li>              
+              <li><a href="index.html">Introduction</a></li>
               <li class="nav-header">Libraries</li>
               <li><a href="backbone.html">Backbone.js</a></li>
               <li><a href="knockout.html">Knockout.js</a></li>
@@ -48,31 +48,31 @@
             </ul>
           </div>
         </div><!--/span-->
-        <div class="span9">          
+        <div class="span9">
           <div class="row-fluid">
             <div class="span4">
-              <h2>Ember.js</h2>              
+              <h2>Ember.js</h2>
               <script type="text/x-handlebars">
                 <form class="form-search" onsubmit="return false;">
-			        {{view Places.SearchView target="Places.searchController" action="search" class="input-medium search-query"}}
-			        {{#view Ember.Button target="Places.searchController" action="search" class="btn btn-primary"}}
-				        Search
-			        {{/view}}	
-			    </form>
-			    {{#view Places.MapView id="map"}}
-			    {{/view}}                
-		     </script>            				
-            </div>      
+                    {{view Places.SearchView target="Places.searchController" action="search" class="input-medium search-query"}}
+                    {{#view Ember.Button target="Places.searchController" action="search" class="btn btn-primary"}}
+                        Search
+                    {{/view}}
+                </form>
+                {{#view Places.MapView id="map"}}
+                {{/view}}
+             </script>
+            </div>
             <div class="span4">
-                <h2>&nbsp;</h2>	
-                <script type="text/x-handlebars">                
-		            <ol id="places">		
-			            {{#collection contentBinding="Places.placeListController"}}
-				            <li><b>Name</b>:{{content.name}}, <b>Rating</b>: {{content.rating}}, <b>Near</b>: {{content.vicinity}} <img class="place-image" {{bindAttr src="content.icon"}} /></li> 
-			            {{/collection}}
-		            </ol>
-		        </script>
-		    </div>
+                <h2>&nbsp;</h2>
+                <script type="text/x-handlebars">
+                    <ol id="places">
+                        {{#collection contentBinding="Places.placeListController"}}
+                            <li><b>Name</b>:{{content.name}}, <b>Rating</b>: {{content.rating}}, <b>Near</b>: {{content.vicinity}} <img class="place-image" {{bindAttr src="content.icon"}} /></li>
+                        {{/collection}}
+                    </ol>
+                </script>
+            </div>
           </div><!--/row-->
         </div><!--/span-->
       </div><!--/row-->
@@ -83,8 +83,8 @@
 
     </div><!--/.fluid-container-->
     <script type="text/javascript" src="js/lib/jquery-min.1.5.1.js"></script>
-	<script type="text/javascript" src="js/lib/ember-0.9.5.min.js"></script>		
-	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>		
-	<script type="text/javascript" src="js/ember/app.js"></script>
+    <script type="text/javascript" src="js/lib/ember-0.9.5.min.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+    <script type="text/javascript" src="js/ember/app.js"></script>
   </body>
 </html>
